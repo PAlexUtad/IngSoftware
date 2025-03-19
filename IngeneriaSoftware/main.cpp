@@ -1,5 +1,4 @@
 #include <iostream>
-#include <conio.h> // for _kbhit() and _getch() (Windows-specific)
 #include "Player.h"
 
 
