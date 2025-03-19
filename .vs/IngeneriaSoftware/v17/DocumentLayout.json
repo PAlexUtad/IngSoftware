@@ -1,37 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Alex\\Documents\\GitHub\\IngSoftware\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{433D500F-BEBF-410A-B28F-15F37914FED2}|IngeneriaSoftware\\IngeneriaSoftware.vcxproj|C:\\Users\\Alex\\Documents\\GitHub\\IngSoftware\\IngeneriaSoftware\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{433D500F-BEBF-410A-B28F-15F37914FED2}|IngeneriaSoftware\\IngeneriaSoftware.vcxproj|solutionrelative:IngeneriaSoftware\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\Alex\\Documents\\GitHub\\IngSoftware\\IngeneriaSoftware\\main.cpp",
-              "RelativeDocumentMoniker": "IngeneriaSoftware\\main.cpp",
-              "ToolTip": "C:\\Users\\Alex\\Documents\\GitHub\\IngSoftware\\IngeneriaSoftware\\main.cpp",
-              "RelativeToolTip": "IngeneriaSoftware\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-19T21:11:42.427Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }
