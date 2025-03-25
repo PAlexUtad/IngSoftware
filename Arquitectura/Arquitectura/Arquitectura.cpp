@@ -78,13 +78,14 @@ void update(float dt) {
     else {
         // read gamepad here basically
         // keep position using this
-        if (tigrKeyHeld(screen, TK_LEFT) || tigrKeyHeld(screen, 'A')) {
+        if (tigrKeyHeld(screen, TK_LEFT)) {
             playerxs -= 10;
         }
-        if (tigrKeyHeld(screen, TK_RIGHT) || tigrKeyHeld(screen, 'D')) {
+        if (tigrKeyHeld(screen, TK_RIGHT)) {
             playerxs += 10;
         }
         if (tigrKeyDown(screen, TK_SPACE)) {
+            playerys -= 200;
         }
 
         recordInput(dt, tigrKeyHeld(screen, TK_LEFT), tigrKeyHeld(screen, TK_RIGHT), (tigrKeyDown(screen, TK_SPACE)), playerx, playery, playerxs, playerys);
