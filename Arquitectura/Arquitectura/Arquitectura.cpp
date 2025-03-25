@@ -72,26 +72,21 @@ void update(float dt) {
 
     toggleMode();
 
-    int leftPressed = 0, rightPressed = 0, spacePressed = 0;
-
     if (recordingMode) {
         playbackInput(dt);
     }
     else {
         // read gamepad here basically
         if (tigrKeyHeld(screen, TK_LEFT) || tigrKeyHeld(screen, 'A')) {
-            leftPressed = 1;
             playerxs -= 10;
         }
         if (tigrKeyHeld(screen, TK_RIGHT) || tigrKeyHeld(screen, 'D')) {
-            rightPressed = 1;
             playerxs += 10;
         }
         if (tigrKeyDown(screen, TK_SPACE)) {
-            spacePressed = 1;
         }
 
-        recordInput(dt, leftPressed, rightPressed, spacePressed, playerx, playery, playerxs, playerys);
+        recordInput(dt, tigrKeyHeld(screen, TK_LEFT), tigrKeyHeld(screen, TK_RIGHT), (tigrKeyDown(screen, TK_SPACE)), playerx, playery, playerxs, playerys);
     }
 
     // Apply physics.
