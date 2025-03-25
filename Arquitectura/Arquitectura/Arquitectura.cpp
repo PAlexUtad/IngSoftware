@@ -6,7 +6,10 @@
 Tigr* screen;
 Tigr* backdrop;
 
-float playerx = 160, playery = 120;
+#define STARTX  160
+#define STARTY  200
+
+float playerx = STARTX, playery = STARTY;
 float playerxs = 0, playerys = 0;
 int standing = 0;
 
@@ -25,7 +28,7 @@ InputRecord inputBuffer[MAX_RECORDINGS];
 int bufferIndex = 0;
 int recordingMode = 0; // 0 = plays normally, 1 = plays the recording
 
-float remaining = 10.0f;
+float remaining = 0.0f;
 
 // Get all inputs of the player (Maybe make a gamepad struct here?) (to pass in the parameters?)
 void recordInput(float dt, int leftPressed, int rightPressed, int spacePressed, float playerx, float playery, float playerxs, float playerys) {
@@ -43,6 +46,8 @@ void recordInput(float dt, int leftPressed, int rightPressed, int spacePressed, 
 }
 
 // Function to play back the recorded inputs.
+// first I kept the position and speed, Im not sure if it's supposed to be done using actual inputs
+// then  I actually reproduced the inputs, although the movement logic is duplicated.
 void playbackInput(float dt) {
     static int playbackIndex = 0;
     static float playbackTime = 0.0f;
@@ -50,11 +55,24 @@ void playbackInput(float dt) {
     if (playbackIndex < bufferIndex) {
         playbackTime += dt;
 
-        if (playbackTime >= inputBuffer[playbackIndex].time) {
+        /*if (playbackTime >= inputBuffer[playbackIndex].time) {
             playerx = inputBuffer[playbackIndex].playerx;
             playery = inputBuffer[playbackIndex].playery;
             playerxs = inputBuffer[playbackIndex].playerxs;
             playerys = inputBuffer[playbackIndex].playerys;
+            playbackIndex++;
+        }*/
+
+        if (playbackTime >= inputBuffer[playbackIndex].time) {
+            if (inputBuffer[playbackIndex].leftPressed) {
+                playerxs -= 10;
+            }
+            if (inputBuffer[playbackIndex].rightPressed) {
+                playerxs += 10;
+            }
+            if (inputBuffer[playbackIndex].spacePressed) {
+                playerys -= 200;
+            }
             playbackIndex++;
         }
     }
@@ -62,6 +80,8 @@ void playbackInput(float dt) {
 
 void toggleMode() {
     if (tigrKeyDown(screen, 'R')) {
+        playerx = STARTX;
+        playery = STARTY;
         recordingMode = !recordingMode;
     }
 }
