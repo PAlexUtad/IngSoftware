@@ -78,16 +78,17 @@ void update(float dt) {
         playbackInput(dt);
     }
     else {
+        // read gamepad here basically
         if (tigrKeyHeld(screen, TK_LEFT) || tigrKeyHeld(screen, 'A')) {
             leftPressed = 1;
-            playerxs -= 10;  // Move left
+            playerxs -= 10;
         }
         if (tigrKeyHeld(screen, TK_RIGHT) || tigrKeyHeld(screen, 'D')) {
             rightPressed = 1;
-            playerxs += 10;  // Move right
+            playerxs += 10;
         }
         if (tigrKeyDown(screen, TK_SPACE)) {
-            spacePressed = 1;  // Jump or perform an action (you can add more logic for this)
+            spacePressed = 1;
         }
 
         recordInput(dt, leftPressed, rightPressed, spacePressed, playerx, playery, playerxs, playerys);
