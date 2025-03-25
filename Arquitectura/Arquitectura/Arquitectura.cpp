@@ -77,6 +77,7 @@ void update(float dt) {
     }
     else {
         // read gamepad here basically
+        // keep position using this
         if (tigrKeyHeld(screen, TK_LEFT) || tigrKeyHeld(screen, 'A')) {
             playerxs -= 10;
         }
