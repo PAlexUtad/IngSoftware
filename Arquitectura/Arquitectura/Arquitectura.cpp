@@ -20,13 +20,14 @@ typedef struct {
 } InputRecord;
 
 #define MAX_RECORDINGS 1000
+// Input Buffer for the inputs
 InputRecord inputBuffer[MAX_RECORDINGS];
 int bufferIndex = 0;
 int recordingMode = 0; // 0 = plays normally, 1 = plays the recording
 
 float remaining = 10.0f;
 
-// Get all inputs of the player
+// Get all inputs of the player (Maybe make a gamepad struct here?) (to pass in the parameters?)
 void recordInput(float dt, int leftPressed, int rightPressed, int spacePressed, float playerx, float playery, float playerxs, float playerys) {
     if (bufferIndex < MAX_RECORDINGS) {
         inputBuffer[bufferIndex].time = dt;
